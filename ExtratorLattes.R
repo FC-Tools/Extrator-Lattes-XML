@@ -333,7 +333,8 @@
   #ORGANIZACAO FINAL
   
   df_final<-rbind(df_artigo, df_trab_evento, df_capitulo, df_livro)
-  
+
+  df_final[df_final==""]<-"-"
   
   write.table(distinct(df_final), file="Producao.txt", row.names = FALSE, sep="\t", dec=",", col.names = TRUE) #Salva o arquivo
   
